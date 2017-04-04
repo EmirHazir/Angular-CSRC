@@ -1,0 +1,19 @@
+<div class="container">
+  <app-cokpit (serverCreated)="onServerAdded($event)" (bpCreated)="onBlueprintAdded($event)"></app-cokpit>
+  <hr>
+  <div class="row">
+    <div class="col-xs-12">
+      <button class="btn btn-primary" (click)="onChangesElement()">Change First Element</button>
+      <button class="btn btn-danger" (click)="onDestroyElement()">Destroy First Element</button>
+      <app-server-element *ngFor="let item of serverElements" 
+      [srvElement]="item"
+      [name]="item.name"
+      >
+        <p #contentPara>
+          <strong *ngIf="item.type === 'server'" style="color: red">{{ item.content }}</strong>
+          <em *ngIf="item.type === 'blueprint'">{{ item.content }}</em>
+        </p>
+      </app-server-element>
+    </div>
+  </div>
+</div>

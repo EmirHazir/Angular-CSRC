@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <ol>
+        <li>Buton oluştur</li>
+        <li>Alında p oluştur secret password</li>
+        <li> buton tıklandığında bu p içeriği görünsün ve tıklama sayısı aşşağıya doğru çoğalsın</li>
+        <li>5. sayıdan sonra bavi olsun sayının text color ı beyaz olsun</li>
+      </ol>
+      <hr>
+      <!--<button class="btn btn-primary" (click)="showSecret = !showSecret" >
+        Display Details
+        </button>-->
+     <button class="btn btn-primary" (click)="onToggleDisplay()" >
+        Display Details
+        </button>   
+      <p *ngIf="showSecret">Secret Password = emir</p>
+      <div
+       *ngFor="let logItem of log; let i = index"
+       [ngStyle]="{'backgroundColor': i >= 4 ? 'blue':'purple'}"
+       [ngClass]="{'white-text' : logItem >= 4}"
+       >
+       {{logItem}}
+       </div>
+    </div>
+  </div>
+</div>
+
+
