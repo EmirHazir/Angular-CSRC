@@ -10,6 +10,5 @@ export class AppComponent {
     const suggestedName = 'Superuser';
   }
   onSubmit() {
-
   }
 }   
